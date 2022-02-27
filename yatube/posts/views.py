@@ -3,10 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return HttpResponse(
-        'You <i>can not</i> get correct <b>answers</b>,<br> '
-        'if you do not have correct <s>questions</s> requests.'
-    ) 
+    template = "posts/index.html"
+    return render(request, template)
 
 def group_posts(request, slug):
     return HttpResponse(f"GROUPS: {slug}")
